@@ -1,0 +1,39 @@
+.Organizationchart{
+    .inner {
+        @include _max-width;
+    }
+    .visual {
+        padding-top: 84px;
+        height: 438px;
+        background-image: url(../images/Organization.jpg);
+        background-size: cover;
+        .inner {
+            display: flex;
+            flex-direction: column;
+            color: $White-100;
+            ol {
+                margin: 100px 0 30px;
+                font-size: 14px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    & + li {
+                        margin-left: 20px;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: -18px;
+                            width: 16px;
+                            height: 16px;
+                            -webkit-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                            @include _background;
+                            background-image: _svg(arrow);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

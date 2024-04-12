@@ -1,0 +1,202 @@
+.company {
+    .inner {
+        @include _max-width;
+        @include _min-width;
+    }
+    .visual {
+        padding-top: 84px;
+        height: 438px;
+        @include _background;
+        background-image: url(../images/bg-company.jpg);
+        background-size: cover;
+        .inner {
+            display: flex;
+            flex-direction: column;
+            color: $White-100;
+            ol {
+                margin: 100px 0 30px;
+                font-size: 14px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    & + li {
+                        margin-left: 20px;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: -18px;
+                            width: 16px;
+                            height: 16px;
+                            -webkit-transform: translateY(-50%);
+                            transform: translateY(-50%);
+                            @include _background;
+                            background-image: _svg(arrow);
+                        }
+                    }
+                }
+            }
+            > h3 {
+                font-size: 54px;
+                font-weight: bold;
+            }
+        }
+    }
+    .overview {
+        > h4 {
+            padding-top: 120px;
+            margin-bottom: 16px;
+            font-size: 20px;
+            color: $TropicalRainForest-26;
+        }
+        > p {
+            display: flex;
+            justify-content: space-between;
+            font-size: 40px;
+            font-weight: bold;
+            width: 780px;
+            strong {
+                position: relative;
+                padding-right: 26px;
+                
+                background-color: $White-100;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 20px;
+                    left: 0;
+                    width: calc(100% + 382px);
+                    height: 2px;
+                    background-color: $EerieBlack-13;
+                    z-index: -1;
+                }
+                & + strong {
+                    background-color: transparent;
+                    text-align: right;
+                    &::after {display: none;}
+                }
+            }
+        }
+        .aboutus {
+            margin: 120px 0 167px;
+            > li {
+                margin-top: 200px;
+                padding-left: 560px;
+                @include _background;
+                background-position: left 35px center;
+                dt {
+                    font-size: 36px;
+                    font-weight: bold;
+                    margin-bottom: 40px;
+                }
+                dd {
+                    font-size: 24px;
+                }
+                &:nth-child(1){
+                    margin-top: 0;
+                    background-image: url(../images/bg-circle.png);
+                    background-size: 240px 252px;
+                }
+                &:nth-child(2){
+                    background-image: url(../images/bg-square.png);
+                    background-size: 310px 210px;
+                }
+                &:nth-child(3){
+                    background-image: url(../images/bg-triangle.png);
+                    background-size: 240px 252px;
+                }
+            }
+        }
+        .hanatown {
+            margin-top: 60px;
+            height: 600px;
+            @include _background;
+            background-image: url(../images/bg-movie.png);
+            background-size: cover;
+            > a {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 60px;
+                    right: 60px;
+                    width: 100px;
+                    height: 100px;
+                    @include _background;
+                    background-image: _svg(play);
+                }
+                > p {
+                    position: absolute;
+                    left: 60px;
+                    bottom: 54px;
+                    font-size: 24px;
+                    color: $White-100;
+                }
+            }
+        }
+    }
+    .quickmenu {
+        position: relative;
+        display: flex;
+        padding: 80px 0;
+        justify-content: space-between;
+        li {
+            margin-left: 20px;
+            padding: 32px;
+            height: 186px;
+            flex: 1;
+            border-radius: 10px;
+            border: 1px solid $Concrete-95;
+            a {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                font-weight: bold;
+                .title {
+                    padding-left: 28px;
+                    font-size: 16px;
+                    color: $TropicalRainForest-26;
+                    @include _background;
+                    background-size: 20px 20px;
+                    background-position: 0 -1px;
+                    & + p {
+                        margin-top: auto;
+                        font-size: 20px;
+                    }
+                }
+            }
+            &:first-child {
+                margin-left: 0;
+                .title {
+                    background-image: _svg(recruit);
+                }
+            }
+            &:nth-child(2) .title {
+                background-image: _svg(esg);
+            }
+            &:nth-child(3) .title {
+                background-image: _svg(ir);
+            }
+            &:hover {
+                background-image: linear-gradient(118deg,rgba(0,149,145,0) -23%,#008495),linear-gradient(180deg,#008458,#008458);
+                border-color: #008458;
+                a {
+                    color: $White-100;
+                    .title {color: inherit;}
+                }
+                &:nth-child(1) .title {
+                    background-image: _svg(recruit-w);
+                }
+                &:nth-child(2) .title {
+                    background-image: _svg(esg-w);
+                }
+                &:nth-child(3) .title {
+                    background-image: _svg(ir-w);
+                }
+            }
+        }
+    }
+}

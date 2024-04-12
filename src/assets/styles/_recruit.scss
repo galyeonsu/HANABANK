@@ -1,0 +1,42 @@
+.recruit {
+    height: 300px;
+    background-image: url(../images/bg-recruit.png);
+    @include _background;
+    background-size: cover;
+    .inner {
+        @include _flex;
+        @include _max-width;
+        @include _min-width;
+        justify-content: space-between;
+        height: 100%;
+        > p {
+            font-size: 34px;
+            font-weight: bold;
+            color: $White-100;
+        }
+        .hire {
+            > a {
+                @include _flex;
+                min-width: 193px;
+                min-height: 54px;
+                padding: 4px 48px 0 24px;
+                border-radius: 28px;
+                background-color: $White-100;
+                font-size: 16px;
+                font-weight: bold;
+                color: $OuterSpace-18;
+                background-image: _svg(arrow-long);
+                background-repeat: no-repeat;
+                background-position: right 20px center;
+                background-size: 16px;
+                > span {margin-left: .3rem;}
+                & + a {
+                    margin-top: 16px;
+                    background-color: $OuterSpace-18;
+                    color: $White-100;
+                    background-image: _svg(arrow-long-w);
+                }
+            }
+        }
+    }
+}

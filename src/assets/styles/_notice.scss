@@ -1,0 +1,82 @@
+.notice {
+    padding: 40px 0 120px;
+    .inner {
+        @include _max-width;
+        @include _min-width;
+        .announce {
+            display: flex;
+            > div {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                &.corporate {
+                    padding-right: 60px;
+                    > ul {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        flex: 1;
+                        li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            a {
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                            span {color: $GraniteGray-40;}
+                        }
+                    }
+                }
+                &.management {
+                    padding-left: 20px;
+                    > ul {
+                        display: flex;
+                        height: 100px;
+                        li {
+                            display: flex;
+                            flex: 1;
+                            flex-direction: column;
+                            padding-left: 28px;
+                            border-left: 1px solid $Concrete-95;
+                            font-weight: bold;
+                            p {
+                                font-size: 16px;
+                            }
+                            a {
+                                width: fit-content;
+                                margin-top: auto;
+                                padding-right: 26px;
+                                font-size: 14px;
+                                @include _background;
+                                background-image: _svg(download);
+                                background-position: 100%;
+                                background-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            &Header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+                h3 {
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                .more {
+                    padding-right: 26px;
+                    @include _background;
+                    background-image: _svg(arrow-long);
+                    background-position: 100%;
+                    background-size: 16px;
+                    color: $EerieBlack-13;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

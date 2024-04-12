@@ -1,0 +1,6 @@
+@mixin _hide	{font-size:0;line-height:0;}
+@mixin _flex	{display:flex;display:-webkit-flex;-webkit-align-items:center;align-items:center;}
+@mixin _justify	{justify-content:center;-webkit-justify-content:center;}
+@mixin _background   {background-repeat:no-repeat;background-size:100% auto;background-position:50% 50%;}
+@mixin _max-width   {max-width:1280px;margin:0 auto;padding:0 40px;}
+@mixin _min-width   {min-width:1024px;}
